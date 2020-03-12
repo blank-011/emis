@@ -1,0 +1,24 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>საგანი</th>
+                <th>ქულა</th>
+                <th>ლექტორი</th>
+                <th>კრედიტი</th>
+                <th>შეფასების სისტემა</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subject of subjects; let i = index" (click)="delete(i)">
+                <th>{{subject.name}} {{i}}</th>
+                <td>{{subject.currentGrade}} / {{subject.totalGrade}}</td>
+                <td>{{subject.teacher}}</td>
+                <td>{{subject.credits}}</td>
+                <td>{{subject.gradeSystem}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+<app-add-subject (clickEvent)="reciveClick($event)"></app-add-subject>

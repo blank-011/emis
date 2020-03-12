@@ -1,0 +1,30 @@
+<div>
+    <button *ngIf="showContent" (click)="showContent=!showContent">Add Subject</button>
+</div>
+<div *ngIf="!showContent">
+    <form action="">
+        <div>
+            <label for="nameInp"> subject name : </label>
+            <input type="text" required id="nameInp" [(ngModel)]="subjectName">
+        </div>
+        <div>
+            <label for="grade"> grade : </label>
+            <input type="number" required id="grade" [(ngModel)]="grade">
+        </div>
+        <div>
+            <label for="teacherName"> teacher : </label>
+            <input type="text" required id="teacherName" [(ngModel)]="teacher">
+        </div>
+        <div>
+            <label for="credit"> credit : </label>
+            <input type="number" required id="credit" [(ngModel)]="credit">
+        </div>
+        <div>
+            <label for="comments"> comments :</label>
+            <input type="text" id="comments" [(ngModel)]="comments">
+        </div>
+        <input type="submit" (click)="addToList()" title="Add To List">
+        <button (click)="addToList()">Add To List</button>
+        <button (click)="showContent=!showContent">close</button>
+    </form>
+</div>
